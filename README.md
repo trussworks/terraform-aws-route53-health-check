@@ -5,7 +5,7 @@ Custom module to configure health check and related AWS CloudWatch alarms.
 
 ```hcl
 module "route53_health_check" {
-  source = "./route53-health-check"
+  source = "trussworks/route53-health-check/aws"
 
   environment       = "${var.environment}"
   dns_name          = "${local.my_move_dns_name}"

@@ -6,13 +6,21 @@ Custom module to configure health check and related AWS CloudWatch alarms.
 ```hcl
 module "route53_health_check" {
   source = "trussworks/route53-health-check/aws"
+  version = "2.0.0"
 
-  environment       = "${var.environment}"
-  dns_name          = "${local.my_move_dns_name}"
-  alarm_actions     = "${compact(local.r53_alarm_actions)}"
+  environment       = var.environment
+  dns_name          = local.my_move_dns_name
+  alarm_actions     = compact(local.r53_alarm_actions)
   health_check_path = "/health?database=false"
 }
 ```
+
+## Terraform Versions
+
+Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to master branch.
+
+Terraform 0.11. Pin module version to ~> 1.0.2. Submit pull-requests to terraform011 branch.
+
 
 ## Inputs
 

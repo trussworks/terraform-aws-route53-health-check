@@ -37,3 +37,9 @@ variable "request_interval" {
   default     = "30"
 }
 
+variable "disable" {
+  description = "Disable health checks"
+  type = bool
+  default = false
+}
+

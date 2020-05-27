@@ -26,8 +26,8 @@ Terraform 0.11. Pin module version to ~> 1.0.2. Submit pull-requests to terrafor
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | alarm\_actions | Actions to execute when this alarm transitions. | list(string) | n/a | yes |
+| disable | Disable health checks | bool | `"false"` | no |
 | dns\_name | Fully-qualified domain name (FQDN) to create. | string | n/a | yes |
-| disable | Flag to turn module on/off, module is on by default | bool | false | no |
 | environment | Environment tag (e.g. prod). | string | n/a | yes |
 | failure\_threshold | Failure Threshold (must be less than or equal to 10) | string | `"3"` | no |
 | health\_check\_path | Resource Path to check | string | `""` | no |

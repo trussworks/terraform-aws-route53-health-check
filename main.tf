@@ -25,7 +25,7 @@ resource "aws_route53_health_check" "http" {
   request_interval  = var.request_interval
   regions           = var.health_check_regions
   measure_latency   = true
-  count = var.disable ? 0 : 1
+  count             = var.disable ? 0 : 1
 
   tags = {
     Name        = "${var.dns_name}-http"
@@ -43,7 +43,7 @@ resource "aws_route53_health_check" "https" {
   request_interval  = var.request_interval
   regions           = var.health_check_regions
   measure_latency   = true
-  count = var.disable ? 0 : 1
+  count             = var.disable ? 0 : 1
 
   tags = {
     Name        = "${var.dns_name}-https"
@@ -57,7 +57,7 @@ resource "aws_cloudwatch_metric_alarm" "http" {
 
   alarm_name        = "${var.dns_name}-status-http"
   alarm_description = "Route53 health check status for ${var.dns_name}"
-  count = var.disable ? 0 : 1
+  count             = var.disable ? 0 : 1
 
 
   namespace   = "AWS/Route53"
@@ -84,7 +84,7 @@ resource "aws_cloudwatch_metric_alarm" "https" {
 
   alarm_name        = "${var.dns_name}-status-https"
   alarm_description = "Route53 health check status for ${var.dns_name}"
-  count = var.disable ? 0 : 1
+  count             = var.disable ? 0 : 1
 
   namespace   = "AWS/Route53"
   metric_name = "HealthCheckStatus"

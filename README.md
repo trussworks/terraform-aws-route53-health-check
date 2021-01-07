@@ -24,7 +24,7 @@ Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to master bra
 
 | Name | Version |
 |------|---------|
-| terraform | >= 13.0 |
+| terraform | >= 0.13.0 |
 | aws | >= 3.0 |
 
 ## Providers

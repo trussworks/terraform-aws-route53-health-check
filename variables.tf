@@ -8,6 +8,12 @@ variable "dns_name" {
   type        = string
 }
 
+variable "alarm_name_suffix" {
+  description = "Suffix for cloudwatch alarm name to ensure uniqueness."
+  type = string
+  default = ""
+}
+
 variable "alarm_actions" {
   description = "Actions to execute when this alarm transitions."
   type        = list(string)

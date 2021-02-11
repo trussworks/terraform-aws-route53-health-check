@@ -10,8 +10,8 @@ variable "dns_name" {
 
 variable "alarm_name_suffix" {
   description = "Suffix for cloudwatch alarm name to ensure uniqueness."
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "alarm_actions" {

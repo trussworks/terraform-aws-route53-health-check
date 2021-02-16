@@ -37,7 +37,7 @@ resource "aws_route53_health_check" "https" {
 resource "aws_cloudwatch_metric_alarm" "http" {
   provider = aws.us-east-1
 
-  alarm_name        = "${var.dns_name}-status-http"
+  alarm_name        = "${var.dns_name}-status-http${var.alarm_name_suffix}"
   alarm_description = "Route53 health check status for ${var.dns_name}"
   count             = var.disable ? 0 : 1
 
@@ -64,7 +64,7 @@ resource "aws_cloudwatch_metric_alarm" "http" {
 resource "aws_cloudwatch_metric_alarm" "https" {
   provider = aws.us-east-1
 
-  alarm_name        = "${var.dns_name}-status-https"
+  alarm_name        = "${var.dns_name}-status-https${var.alarm_name_suffix}"
   alarm_description = "Route53 health check status for ${var.dns_name}"
   count             = var.disable ? 0 : 1
 

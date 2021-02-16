@@ -39,6 +39,7 @@ Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to master bra
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | alarm\_actions | Actions to execute when this alarm transitions. | `list(string)` | n/a | yes |
+| alarm\_name\_suffix | Suffix for cloudwatch alarm name to ensure uniqueness. | `string` | `""` | no |
 | disable | Disable health checks | `bool` | `false` | no |
 | dns\_name | Fully-qualified domain name (FQDN) to create. | `string` | n/a | yes |
 | environment | Environment tag (e.g. prod). | `string` | n/a | yes |

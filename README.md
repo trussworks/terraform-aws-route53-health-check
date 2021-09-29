@@ -16,40 +16,55 @@ module "route53_health_check" {
 
 ## Terraform Versions
 
-Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to master branch.
-
+Terraform 0.12. Pin module version to ~> 2.X. Submit pull-requests to main branch.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| aws | >= 3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 3.0 |
-| aws.us-east-1 | >= 3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
+| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | >= 3.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_metric_alarm.http](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.https](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_route53_health_check.http](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_health_check) | resource |
+| [aws_route53_health_check.https](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_health_check) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| alarm\_actions | Actions to execute when this alarm transitions. | `list(string)` | n/a | yes |
-| alarm\_name\_suffix | Suffix for cloudwatch alarm name to ensure uniqueness. | `string` | `""` | no |
-| disable | Disable health checks | `bool` | `false` | no |
-| dns\_name | Fully-qualified domain name (FQDN) to create. | `string` | n/a | yes |
-| environment | Environment tag (e.g. prod). | `string` | n/a | yes |
-| failure\_threshold | Failure Threshold (must be less than or equal to 10) | `string` | `"3"` | no |
-| health\_check\_path | Resource Path to check | `string` | `""` | no |
-| health\_check\_regions | AWS Regions for health check | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-west-1",<br>  "us-west-2"<br>]</pre> | no |
-| request\_interval | Request Interval (must be 10 or 30) | `string` | `"30"` | no |
+| <a name="input_alarm_actions"></a> [alarm\_actions](#input\_alarm\_actions) | Actions to execute when this alarm transitions. | `list(string)` | n/a | yes |
+| <a name="input_alarm_name_suffix"></a> [alarm\_name\_suffix](#input\_alarm\_name\_suffix) | Suffix for cloudwatch alarm name to ensure uniqueness. | `string` | `""` | no |
+| <a name="input_disable"></a> [disable](#input\_disable) | Disable health checks | `bool` | `false` | no |
+| <a name="input_dns_name"></a> [dns\_name](#input\_dns\_name) | Fully-qualified domain name (FQDN) to create. | `string` | n/a | yes |
+| <a name="input_enable_http_alarm"></a> [enable\_http\_alarm](#input\_enable\_http\_alarm) | Enable the HTTP health check metric alarm. Only works when enable\_http\_check is true. | `bool` | `true` | no |
+| <a name="input_enable_http_check"></a> [enable\_http\_check](#input\_enable\_http\_check) | Enable the HTTP health check. | `bool` | `true` | no |
+| <a name="input_enable_https_alarm"></a> [enable\_https\_alarm](#input\_enable\_https\_alarm) | Enable the HTTPS health check metric alarm. Only works when enable\_https\_check is true. | `bool` | `true` | no |
+| <a name="input_enable_https_check"></a> [enable\_https\_check](#input\_enable\_https\_check) | Enable the HTTPS health check. | `bool` | `true` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment tag (e.g. prod). | `string` | n/a | yes |
+| <a name="input_failure_threshold"></a> [failure\_threshold](#input\_failure\_threshold) | Failure Threshold (must be less than or equal to 10) | `string` | `"3"` | no |
+| <a name="input_health_check_path"></a> [health\_check\_path](#input\_health\_check\_path) | Resource Path to check | `string` | `""` | no |
+| <a name="input_health_check_regions"></a> [health\_check\_regions](#input\_health\_check\_regions) | AWS Regions for health check | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-west-1",<br>  "us-west-2"<br>]</pre> | no |
+| <a name="input_request_interval"></a> [request\_interval](#input\_request\_interval) | Request Interval (must be 10 or 30) | `string` | `"30"` | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

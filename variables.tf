@@ -49,3 +49,26 @@ variable "disable" {
   default     = false
 }
 
+variable "enable_http_check" {
+  description = "Enable the HTTP health check."
+  type        = bool
+  default     = true
+}
+
+variable "enable_https_check" {
+  description = "Enable the HTTPS health check."
+  type        = bool
+  default     = true
+}
+
+variable "enable_http_alarm" {
+  description = "Enable the HTTP health check metric alarm. Only works when enable_http_check is true."
+  type        = bool
+  default     = true
+}
+
+variable "enable_https_alarm" {
+  description = "Enable the HTTPS health check metric alarm. Only works when enable_https_check is true."
+  type        = bool
+  default     = true
+}

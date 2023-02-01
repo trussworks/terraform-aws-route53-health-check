@@ -1,6 +1,8 @@
-# DEPRECIATION NOTICE
+# DEPRECATION NOTICE
+
 This module has been deprecated and is no longer maintained. Should you need to continue to use it, please fork the repository. Thank you.
- Custom module to configure health check and related AWS CloudWatch alarms.
+
+Custom module to configure health check and related AWS CloudWatch alarms.
 
 ## Usage
 
